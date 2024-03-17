@@ -17,6 +17,9 @@
 # Please reference edk2 user manual for more detail descriptions at https://github.com/tianocore-docs/Docs/raw/master/User_Docs/EDK_II_UserManual_0_7.pdf
 #
 
+echo "args $@"
+exit 1
+
 SCRIPTNAME="edksetup.sh"
 RECONFIG=FALSE
 
@@ -118,6 +121,8 @@ SourceEnv()
 I=$#
 while [ $I -gt 0 ]
 do
+  echo "$1"
+  exit 1
   case "$1" in
     BaseTools)
       # Ignore argument for backwards compatibility
